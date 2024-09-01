@@ -1,10 +1,11 @@
 import {provideHttpClient} from "@angular/common/http";
-import {ApplicationConfig} from "@angular/core";
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 
 export const appConfig: ApplicationConfig = {
     providers: [
         provideHttpClient(),
-        // provideZoneChangeDetection({ eventCoalescing: true }),
+        provideZoneChangeDetection({ eventCoalescing: true }),
+        // provideExperimentalZonelessChangeDetection(),
         // provideRouter([...appRoutes]),
         // provideStore({ cardState: cardsReducer.reducer }),
         // provideEffects([CardEffects]),
